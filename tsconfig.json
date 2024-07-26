@@ -14,7 +14,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["jest", "node", "redux-mock-store"]
+    "sourceMap": true,
+    "useDefineForClassFields": true,
+    "types": ["jest", "node", "vite/client", "redux-mock-store"]
   },
   "include": ["src"]
 }
