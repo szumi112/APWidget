@@ -50,7 +50,6 @@ const Widget: React.FC<WidgetProps> = ({ id }) => {
   const handleIncrease = () => {
     const nextLevel = intensityLevels.find((level) => level > intensity);
     const newIntensity = nextLevel !== undefined ? nextLevel : 100;
-    console.log(`Increasing intensity to ${newIntensity}`);
     dispatch(setIntensity({ id, intensity: newIntensity }));
     sendDataToBackend();
   };
@@ -60,7 +59,6 @@ const Widget: React.FC<WidgetProps> = ({ id }) => {
       .reverse()
       .find((level) => level < intensity);
     const newIntensity = previousLevel !== undefined ? previousLevel : 0;
-    console.log(`Decreasing intensity to ${newIntensity}`);
     dispatch(setIntensity({ id, intensity: newIntensity }));
     sendDataToBackend();
   };
@@ -69,7 +67,6 @@ const Widget: React.FC<WidgetProps> = ({ id }) => {
     mode: "nightVision" | "duskTillDawn" | "flashing"
   ) => {
     if (intensity > 0) {
-      console.log(`Toggling mode: ${mode}`);
       dispatch(toggleMode({ id, mode }));
       sendDataToBackend();
     }
